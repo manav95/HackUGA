@@ -19,6 +19,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 import android.content.res.AssetManager;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -39,7 +40,10 @@ public class MainActivity extends AppCompatActivity{
         Resources resources = this.getResources();
         map = ReadCVS.exec(resources);
         Spinner champSpinner = (Spinner) findViewById(R.id.championSpinner);
+        //ArrayAdapter<CharSequence> champAdapter = ArrayAdapter.createFromResource(this, R.array.item_array, R.l)
         List<CharSequence> roleSequence = new ArrayList<CharSequence>();
+        //roleSequence.setDropDownViewResource(R.layout.spinner_layout);
+        //champSpinner.setAdapter((SpinnerAdapter) roleSequence);
         roleSequence.add("Top");
         roleSequence.add("Jungle");
         roleSequence.add("Mid");
@@ -60,10 +64,10 @@ public class MainActivity extends AppCompatActivity{
             }
         }
         Collections.sort(charSequence);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, charSequence);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.spinner_item, charSequence);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         champSpinner.setAdapter(adapter);
-        ArrayAdapter<CharSequence> roleAdapter = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, roleSequence);
+        ArrayAdapter<CharSequence> roleAdapter = new ArrayAdapter<CharSequence>(this, R.layout.spinner_item, roleSequence);
         Spinner roleSpinner = (Spinner) findViewById(R.id.roleSpinner);
         roleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(roleAdapter);

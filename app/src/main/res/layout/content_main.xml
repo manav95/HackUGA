@@ -12,18 +12,48 @@
     tools:showIn="@layout/activity_main"
     tools:context=".MainActivity">
 
+    <View
+        android:id = "@+id/view_id"
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        android:background = "@drawable/leagueoflegends"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Champion"
+        android:id="@+id/textView6"
+        android:layout_alignParentTop = "true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="30dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Role"
+        android:id="@+id/textView7"
+        android:layout_below="@+id/numGamesWithChamp"
+        android:layout_alignParentTop = "true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="30dp"
+        />
     <Spinner
         android:id="@+id/championSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:spinnerMode="dropdown"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="160dp"
+        />
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/roleSpinner"
         android:spinnerMode="dropdown"
+        android:layout_marginLeft= "160dp"
         android:layout_below="@+id/championSpinner"
         android:layout_alignParentStart="true" />
     <EditText
@@ -32,35 +62,47 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:textSize="35dp"/>
     <EditText
         android:id="@+id/numGamesWithChamp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="35dp"/>
     <EditText
         android:id="@+id/numExpectedGames"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:inputType="number"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="35dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How many games have you played in total?"
         android:id="@+id/textView"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="5dp"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/roleSpinner" />
+        android:layout_below="@+id/roleSpinner"
+        android:textSize="30dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How many games have you played with this champ?"
         android:id="@+id/textView2"
+        android:layout_marginTop="5dp"
+        android:textSize="30dp"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/numGamesTotal"
         android:layout_alignParentStart="true" />
 
@@ -68,14 +110,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="How many games do you expect to play with this champ?"
+        android:textSize="30dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:id="@+id/textView3"
         android:layout_below="@+id/numGamesWithChamp"
         android:layout_alignParentStart="true" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
         android:text="Here is your reimbursement:"
         android:id="@+id/textView4"
+        android:layout_marginLeft="5dp"
         android:layout_marginTop="100dp"
         android:layout_below="@+id/numExpectedGames"
         android:layout_alignParentStart="true" />
@@ -83,16 +130,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
+        android:layout_marginLeft="5dp"
         android:layout_below="@+id/textView4"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:textSize="30dp"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Go"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
         android:id="@+id/button"
         android:layout_below="@+id/numExpectedGames"
         android:layout_alignParentStart="true" />
+
+
 
 </RelativeLayout>
