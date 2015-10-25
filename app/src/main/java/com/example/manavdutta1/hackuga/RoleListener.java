@@ -32,6 +32,6 @@ public class RoleListener  implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-           MainActivity.setCurrRole(null);
+           //MainActivity.setCurrRole(null);
     }
 }

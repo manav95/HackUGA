@@ -32,6 +32,6 @@ public class ChampionListener  implements AdapterView.OnItemSelectedListener {
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-        MainActivity.setCurrChampion(null);
+        //MainActivity.setCurrChampion(null);
     }
 }

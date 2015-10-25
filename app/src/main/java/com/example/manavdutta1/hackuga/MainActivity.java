@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import android.content.res.AssetManager;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.HashMap;
 import java.util.Set;
 
@@ -66,18 +67,23 @@ public class MainActivity extends AppCompatActivity{
         Spinner roleSpinner = (Spinner) findViewById(R.id.roleSpinner);
         roleAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         roleSpinner.setAdapter(roleAdapter);
+        roleSpinner.setOnItemSelectedListener(new RoleListener());
+        champSpinner.setOnItemSelectedListener(new ChampionListener());
         Button button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String concat = currRole + currChampion;
-                Champion value = (Champion) map.get(concat);
+                String concat = currChampion + currRole;
+                Champion value = map.get(concat);
                 EditText numGames = (EditText) findViewById(R.id.numGamesTotal);
                 EditText numExpected = (EditText) findViewById(R.id.numExpectedGames);
                 EditText numGamesWithChamp = (EditText) findViewById(R.id.numGamesWithChamp);
                 Double quoteValue = value.calculateQuote(value.getWinRate(), Double.parseDouble(numGamesWithChamp.getText().toString()), Double.parseDouble(numExpected.getText().toString()), Double.parseDouble(numGames.getText().toString()), value.getPopularity());
+                DecimalFormat quoteValueMod = new DecimalFormat("#.00");
+                String presentable = quoteValueMod.format(quoteValue);
+
                 TextView view = (TextView) findViewById(R.id.textView5);
-                view.setText(quoteValue.toString());
+                view.setText("$" + presentable);
             }
         });
 
